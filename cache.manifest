@@ -1,0 +1,22 @@
+CACHE:
+
+# js
+platform.js
+polymer.js
+
+# jpg
+design/contentbg.jpg
+design/footer.jpg
+design/head.jpg
+
+# png
+#design/contentbottom.png
+design/dainiuslenis.png
+design/logo.png
+design/logobg.png
+design/menubg.png
+
+# html
+template.html
+index.html
+
