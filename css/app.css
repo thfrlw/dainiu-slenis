@@ -1,0 +1,282 @@
+/* reset all elements */
+#app, #app * {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+/* app window */
+#app {
+  background: #111;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  position: absolute;
+  left:0; top:0;
+}
+#app > nav {
+  height: 29px;
+  min-width: 100%;
+  position: fixed;
+  top: 0; left: 0;
+  z-index: 100;
+  width: 100%;
+
+  background-image: url('../img/nav.png');
+
+  border-bottom: 1px solid rgba(0,0,0,0.5);
+  background-position: 50% 100%;
+  text-align: center;
+  padding: 0px 3%;
+}
+#app > nav .x-item {
+  cursor: pointer;
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+#app > nav > figure {
+  display: none;
+}
+#app > nav > .links {
+  margin: 0 auto;
+  text-align: center;
+}
+#app > nav > .links > .x-item {
+  color: rgba(255, 255, 255, 1);
+  display: inline-block;
+  font-variant: small-caps;
+  font-size: 1.2rem;
+  font-family: 'Lucida Grande';
+  text-shadow: rgba(0, 0, 0, 0.6) 0px 1px 2px;
+  padding: 0px 1.7%;
+  line-height: 29px;
+  height: 29px;
+}
+#app > nav > .links > .x-item:hover {
+  background-color: rgba(0,0,0,0.1);
+}
+#app > nav > .links > .x-item:active {
+  background-color: rgba(0,0,0,0.3);
+
+}
+@media (min-width: 480px) and (orientation: portrait),
+(min-width: 768px) and (orientation: landscape) {
+  #app > nav {
+    height: 50px;
+  }
+  #app > nav > .links > .x-item {
+    line-height: 50px;
+    height: 50px;
+  }
+}
+@media (min-width: 480px) {
+  #app > nav > figure {
+    display: block;
+    background-image: url('../img/logobg.png');
+    background-repeat: no-repeat;
+    background-size: 115px 75px;
+    height: 75px;
+    margin: 0;
+    min-width: 115px;
+    position: relative;
+    float: left;
+  }
+  #app > nav > figure .x-menu-item {
+    cursor: pointer;
+    height: 100%;
+    max-width: 115px;
+    text-align: center;
+  }
+  #app nav > figure img {
+    height: 52px;
+    width: 61px;
+  }
+
+}
+
+@media (min-width: 768px) and (orientation: portrait),
+(min-width: 1024px) and (orientation: landscape) {
+  #app > nav > figure {
+    background-image: url('../img/logobg.png');
+    background-size: 230px 150px;
+    height: 150px;
+    min-width: 230px;
+  }
+  #app > nav > .links {
+    text-align: center;
+    float: right;
+    margin: 0;
+    min-width: 281px;
+  }
+
+  #app > nav > figure > .x-item {
+    max-width: 230px;
+  }
+  #app nav > figure img {
+    height: auto;
+    width: auto;
+  }
+}
+
+#pages {
+  background: transparent;
+  display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+  display: -moz-box;         /* OLD - Firefox 19- (buggy but mostly works) */
+  display: -ms-flexbox;      /* TWEENER - IE 10 */
+  display: -webkit-flex;     /* NEW - Chrome */
+  display: flex;             /* NEW, Spec - Opera 12.1, Firefox 20+ */
+
+  align-items: stretch;
+  -webkit-align-items: stretch;
+  -webkit-box-align: stretch;
+
+  flex-direction: row;
+  -webkit-flex-direction: row;
+  -webkit-flex-orient: horizontal;
+
+  height: 100%;
+  position: relative;
+  min-width: 100%;
+
+  transition: -webkit-transform 0.3s 0.07s, padding 0.3s 0;
+  -webkit-transition: -webkit-transform 0.3s 0.07s, padding 0.3s 0;
+
+}
+
+
+#app[data-slide="1"] #pages {
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+}
+
+#app[data-slide="2"] #pages {
+  transform: translate3d(-100%, 0, 0);
+  -webkit-transform: translate3d(-100%, 0, 0);
+}
+
+#app[data-slide="3"] #pages {
+  transform: translate3d(-200%, 0, 0);
+  -webkit-transform: translate3d(-200%, 0, 0);
+}
+
+#app[data-slide="4"] #pages {
+  transform: translate3d(-300%, 0, 0);
+  -webkit-transform: translate3d(-300%, 0, 0);
+}
+#pages > section {
+  height: 100%;
+  min-width: 100%;
+  overflow-y: scroll;
+}
+#pages .container {
+  background-image: url('../img/design.png'), url('../img/pattern.jpg');
+  background-repeat: no-repeat, repeat;
+  background-position: 60% 100%, 60% 50%;
+  text-align: center;
+  padding: 29px 0;
+  min-height: 100%;
+}
+
+@media (min-width: 480px) and (orientation: portrait),
+(min-width: 768px) and (orientation: landscape) {
+  #pages .container {
+    padding: 50px 0;
+  }
+}
+
+/* PAGE HEADER */
+#pages .container > header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.9);
+  background-image: url('../img/head.jpg');
+  background-position: 15% 100%;
+  box-shadow: inset rgba(0, 0, 0, 0.7) 0px 0.3em 1em;
+  min-height: 100px;
+  width: 100%;
+}
+#pages .container > header::before {
+  background-image: url('../img/title.png');
+  background-position: 90% 90%;
+  background-repeat: no-repeat;
+  content: '';
+  min-height: 100px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+#pages > section[data-slide="2"] header,
+#pages > section[data-slide="2"] header::before {
+  min-height: 14em;
+}
+#pages > section[data-slide="1"] header,
+#pages > section[data-slide="2"] header::before {
+  display: none;
+}
+
+/* PAGE CONTET */
+#pages .container > article {
+  color: rgba(255, 255, 255, 0.9);
+  cursor: default;
+  display: block;
+  font-size: 0.9rem;
+  line-height: 1.6rem;
+  font-family: 'Lucida Grande';
+  padding: 2% 7%;
+  text-align: right;
+  text-shadow: rgba(0, 0, 0, 0.5) 0px 1px 1px;
+  width: 100%;
+}
+@media (min-width: 768px) and (orientation: landscape) {
+  #pages .container > article {
+    max-width: 768px;
+    margin: 0 auto;
+  }
+  #pages section[data-slide="1"] .container > article {
+    max-width: none;
+    margin: 0;
+  }
+}
+#pages > section[data-slide="1"] article {
+  padding: 3% 7%;
+  text-align: center;
+  height: auto;
+}
+#pages > section[data-slide="1"] #gallery {
+  display: block;
+}
+#pages > section[data-slide="1"] #gallery img {
+  max-width: 90%;
+  box-shadow: rgba(0,0,0,1) 0 1px 5px;
+}
+
+#pages .container > article ul {
+  padding: 0px; list-style-type: none;
+}
+#app > footer {
+  display: none;
+}
+
+@media (min-width: 768px) and (orientation: portrait),
+(min-width: 1024px) and (orientation: landscape) {
+  #pages .container {
+    background-position: right 0 bottom 60px, 80% 100%;
+  }
+  #pages > section[data-slide="1"] .container {
+    background-position: right 0 top 100%, 80% 100%;
+  }
+  #app > footer {
+    background-image: url('../img/foot.jpg');
+    background-position: 50% 0%;
+    border-top: 1px solid rgba(0, 0, 0, 0.9);
+    box-shadow: inset rgba(0, 0, 0, 0.6) 0px 0.3em 1em;
+    bottom: 0;
+    display: block;
+    height: 60px;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    transition: transform 0.3s 0.07s;
+    -webkit-transition: -webkit-transform 0.3s 0.07s;
+  }
+  #app[data-slide="1"] > footer {
+    transform: translate3d(0, 60px, 0);
+    -webkit-transform: translate3d(0, 60px, 0);
+  }
+}
